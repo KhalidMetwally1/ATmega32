@@ -1,1 +1,1 @@
-# Embedded Systems Diploma C Projects and Assignments
+# Embedded Systems Diploma - AVR Interfacing
