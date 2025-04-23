@@ -11,10 +11,11 @@
 
 int main()
 {
-	DDRA = 0b00000001 ;
+	DDRA = 0b10000001;
 	while(1)
 	{
 		PORTA ^= (1<<0);
+		PORTA ^= (1<<7);
 		_delay_ms(1000);
 	}
 	return 0;

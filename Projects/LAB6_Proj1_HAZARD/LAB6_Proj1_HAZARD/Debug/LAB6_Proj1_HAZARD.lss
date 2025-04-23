@@ -3,31 +3,31 @@ LAB6_Proj1_HAZARD.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         00000ad0  00000000  00000000  00000094  2**1
+  0 .text         00000b32  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000046  00800060  00000ad0  00000b64  2**0
+  1 .data         00000046  00800060  00000b32  00000bc6  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          00000002  008000a6  008000a6  00000baa  2**0
+  2 .bss          00000002  008000a6  008000a6  00000c0c  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  00000baa  2**0
+  3 .comment      00000030  00000000  00000000  00000c0c  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000bdc  2**2
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000c3c  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 000001a8  00000000  00000000  00000c18  2**0
+  5 .debug_aranges 000001a8  00000000  00000000  00000c78  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   00001e51  00000000  00000000  00000dc0  2**0
+  6 .debug_info   00001e40  00000000  00000000  00000e20  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 00000c20  00000000  00000000  00002c11  2**0
+  7 .debug_abbrev 00000c15  00000000  00000000  00002c60  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   0000128c  00000000  00000000  00003831  2**0
+  8 .debug_line   0000126a  00000000  00000000  00003875  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000370  00000000  00000000  00004ac0  2**2
+  9 .debug_frame  00000370  00000000  00000000  00004ae0  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    00000869  00000000  00000000  00004e30  2**0
+ 10 .debug_str    00000861  00000000  00000000  00004e50  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    000018cb  00000000  00000000  00005699  2**0
+ 11 .debug_loc    00001883  00000000  00000000  000056b1  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000148  00000000  00000000  00006f64  2**0
+ 12 .debug_ranges 00000148  00000000  00000000  00006f34  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -67,8 +67,8 @@ Disassembly of section .text:
   60:	10 e0       	ldi	r17, 0x00	; 0
   62:	a0 e6       	ldi	r26, 0x60	; 96
   64:	b0 e0       	ldi	r27, 0x00	; 0
-  66:	e0 ed       	ldi	r30, 0xD0	; 208
-  68:	fa e0       	ldi	r31, 0x0A	; 10
+  66:	e2 e3       	ldi	r30, 0x32	; 50
+  68:	fb e0       	ldi	r31, 0x0B	; 11
   6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
   6c:	05 90       	lpm	r0, Z+
   6e:	0d 92       	st	X+, r0
@@ -90,7 +90,7 @@ Disassembly of section .text:
   82:	b2 07       	cpc	r27, r18
   84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
   86:	0e 94 4f 03 	call	0x69e	; 0x69e <main>
-  8a:	0c 94 66 05 	jmp	0xacc	; 0xacc <_exit>
+  8a:	0c 94 97 05 	jmp	0xb2e	; 0xb2e <_exit>
 
 0000008e <__bad_interrupt>:
   8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -968,29 +968,29 @@ static void voidInit(void)
  638:	70 91 6e 00 	lds	r23, 0x006E	; 0x80006e <R_SSD+0x1>
  63c:	80 91 6f 00 	lds	r24, 0x006F	; 0x80006f <R_SSD+0x2>
  640:	90 91 70 00 	lds	r25, 0x0070	; 0x800070 <R_SSD+0x3>
- 644:	0e 94 c8 04 	call	0x990	; 0x990 <SSD_voidInitialDataPort>
+ 644:	0e 94 f9 04 	call	0x9f2	; 0x9f2 <SSD_voidInitialDataPort>
 	SSD_voidInitialDataPort(L_SSD);
  648:	60 91 69 00 	lds	r22, 0x0069	; 0x800069 <L_SSD>
  64c:	70 91 6a 00 	lds	r23, 0x006A	; 0x80006a <L_SSD+0x1>
  650:	80 91 6b 00 	lds	r24, 0x006B	; 0x80006b <L_SSD+0x2>
  654:	90 91 6c 00 	lds	r25, 0x006C	; 0x80006c <L_SSD+0x3>
- 658:	0e 94 c8 04 	call	0x990	; 0x990 <SSD_voidInitialDataPort>
+ 658:	0e 94 f9 04 	call	0x9f2	; 0x9f2 <SSD_voidInitialDataPort>
 		
 	SW_voidInit(R_SW);
  65c:	60 91 66 00 	lds	r22, 0x0066	; 0x800066 <R_SW>
  660:	70 91 67 00 	lds	r23, 0x0067	; 0x800067 <R_SW+0x1>
  664:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <R_SW+0x2>
- 668:	0e 94 20 05 	call	0xa40	; 0xa40 <SW_voidInit>
+ 668:	0e 94 51 05 	call	0xaa2	; 0xaa2 <SW_voidInit>
 	SW_voidInit(L_SW);
  66c:	60 91 63 00 	lds	r22, 0x0063	; 0x800063 <L_SW>
  670:	70 91 64 00 	lds	r23, 0x0064	; 0x800064 <L_SW+0x1>
  674:	80 91 65 00 	lds	r24, 0x0065	; 0x800065 <L_SW+0x2>
- 678:	0e 94 20 05 	call	0xa40	; 0xa40 <SW_voidInit>
+ 678:	0e 94 51 05 	call	0xaa2	; 0xaa2 <SW_voidInit>
 	SW_voidInit(H_SW);
  67c:	60 91 60 00 	lds	r22, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
  680:	70 91 61 00 	lds	r23, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
  684:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <__DATA_REGION_ORIGIN__+0x2>
- 688:	0e 94 20 05 	call	0xa40	; 0xa40 <SW_voidInit>
+ 688:	0e 94 51 05 	call	0xaa2	; 0xaa2 <SW_voidInit>
 	
 	CLCD_voidInit();
  68c:	0e 94 e2 00 	call	0x1c4	; 0x1c4 <CLCD_voidInit>
@@ -1046,13 +1046,13 @@ void APP_voidSetMode(MODE_enumModeState Copy_enumSetMode)
  6c0:	70 91 6e 00 	lds	r23, 0x006E	; 0x80006e <R_SSD+0x1>
  6c4:	80 91 6f 00 	lds	r24, 0x006F	; 0x80006f <R_SSD+0x2>
  6c8:	90 91 70 00 	lds	r25, 0x0070	; 0x800070 <R_SSD+0x3>
- 6cc:	0e 94 02 05 	call	0xa04	; 0xa04 <SSD_voidDisable>
+ 6cc:	0e 94 33 05 	call	0xa66	; 0xa66 <SSD_voidDisable>
 		SSD_voidDisable(L_SSD);
  6d0:	60 91 69 00 	lds	r22, 0x0069	; 0x800069 <L_SSD>
  6d4:	70 91 6a 00 	lds	r23, 0x006A	; 0x80006a <L_SSD+0x1>
  6d8:	80 91 6b 00 	lds	r24, 0x006B	; 0x80006b <L_SSD+0x2>
  6dc:	90 91 6c 00 	lds	r25, 0x006C	; 0x80006c <L_SSD+0x3>
- 6e0:	0e 94 02 05 	call	0xa04	; 0xa04 <SSD_voidDisable>
+ 6e0:	0e 94 33 05 	call	0xa66	; 0xa66 <SSD_voidDisable>
 		// CLCD For IDLE
 		CLCD_voidClearScreen();
  6e4:	0e 94 d8 00 	call	0x1b0	; 0x1b0 <CLCD_voidClearScreen>
@@ -1071,20 +1071,20 @@ void APP_voidSetMode(MODE_enumModeState Copy_enumSetMode)
  6f6:	70 91 6e 00 	lds	r23, 0x006E	; 0x80006e <R_SSD+0x1>
  6fa:	80 91 6f 00 	lds	r24, 0x006F	; 0x80006f <R_SSD+0x2>
  6fe:	90 91 70 00 	lds	r25, 0x0070	; 0x800070 <R_SSD+0x3>
- 702:	0e 94 e4 04 	call	0x9c8	; 0x9c8 <SSD_voidEnable>
+ 702:	0e 94 15 05 	call	0xa2a	; 0xa2a <SSD_voidEnable>
 		SSD_voidDisable(L_SSD);
  706:	60 91 69 00 	lds	r22, 0x0069	; 0x800069 <L_SSD>
  70a:	70 91 6a 00 	lds	r23, 0x006A	; 0x80006a <L_SSD+0x1>
  70e:	80 91 6b 00 	lds	r24, 0x006B	; 0x80006b <L_SSD+0x2>
  712:	90 91 6c 00 	lds	r25, 0x006C	; 0x80006c <L_SSD+0x3>
- 716:	0e 94 02 05 	call	0xa04	; 0xa04 <SSD_voidDisable>
+ 716:	0e 94 33 05 	call	0xa66	; 0xa66 <SSD_voidDisable>
 		SSD_voidSendNumber(R_SSD,0);
  71a:	60 91 6d 00 	lds	r22, 0x006D	; 0x80006d <R_SSD>
  71e:	70 91 6e 00 	lds	r23, 0x006E	; 0x80006e <R_SSD+0x1>
  722:	80 91 6f 00 	lds	r24, 0x006F	; 0x80006f <R_SSD+0x2>
  726:	90 91 70 00 	lds	r25, 0x0070	; 0x800070 <R_SSD+0x3>
  72a:	40 e0       	ldi	r20, 0x00	; 0
- 72c:	0e 94 cd 04 	call	0x99a	; 0x99a <SSD_voidSendNumber>
+ 72c:	0e 94 fe 04 	call	0x9fc	; 0x9fc <SSD_voidSendNumber>
 		// CLCD For Right
 		CLCD_voidClearScreen();
  730:	0e 94 d8 00 	call	0x1b0	; 0x1b0 <CLCD_voidClearScreen>
@@ -1103,20 +1103,20 @@ void APP_voidSetMode(MODE_enumModeState Copy_enumSetMode)
  742:	70 91 6e 00 	lds	r23, 0x006E	; 0x80006e <R_SSD+0x1>
  746:	80 91 6f 00 	lds	r24, 0x006F	; 0x80006f <R_SSD+0x2>
  74a:	90 91 70 00 	lds	r25, 0x0070	; 0x800070 <R_SSD+0x3>
- 74e:	0e 94 02 05 	call	0xa04	; 0xa04 <SSD_voidDisable>
+ 74e:	0e 94 33 05 	call	0xa66	; 0xa66 <SSD_voidDisable>
 		SSD_voidEnable(L_SSD);
  752:	60 91 69 00 	lds	r22, 0x0069	; 0x800069 <L_SSD>
  756:	70 91 6a 00 	lds	r23, 0x006A	; 0x80006a <L_SSD+0x1>
  75a:	80 91 6b 00 	lds	r24, 0x006B	; 0x80006b <L_SSD+0x2>
  75e:	90 91 6c 00 	lds	r25, 0x006C	; 0x80006c <L_SSD+0x3>
- 762:	0e 94 e4 04 	call	0x9c8	; 0x9c8 <SSD_voidEnable>
+ 762:	0e 94 15 05 	call	0xa2a	; 0xa2a <SSD_voidEnable>
 		SSD_voidSendNumber(L_SSD,0);
  766:	60 91 69 00 	lds	r22, 0x0069	; 0x800069 <L_SSD>
  76a:	70 91 6a 00 	lds	r23, 0x006A	; 0x80006a <L_SSD+0x1>
  76e:	80 91 6b 00 	lds	r24, 0x006B	; 0x80006b <L_SSD+0x2>
  772:	90 91 6c 00 	lds	r25, 0x006C	; 0x80006c <L_SSD+0x3>
  776:	40 e0       	ldi	r20, 0x00	; 0
- 778:	0e 94 cd 04 	call	0x99a	; 0x99a <SSD_voidSendNumber>
+ 778:	0e 94 fe 04 	call	0x9fc	; 0x9fc <SSD_voidSendNumber>
 		// CLCD For Left
 		CLCD_voidClearScreen();
  77c:	0e 94 d8 00 	call	0x1b0	; 0x1b0 <CLCD_voidClearScreen>
@@ -1135,27 +1135,27 @@ void APP_voidSetMode(MODE_enumModeState Copy_enumSetMode)
  78e:	70 91 6e 00 	lds	r23, 0x006E	; 0x80006e <R_SSD+0x1>
  792:	80 91 6f 00 	lds	r24, 0x006F	; 0x80006f <R_SSD+0x2>
  796:	90 91 70 00 	lds	r25, 0x0070	; 0x800070 <R_SSD+0x3>
- 79a:	0e 94 e4 04 	call	0x9c8	; 0x9c8 <SSD_voidEnable>
+ 79a:	0e 94 15 05 	call	0xa2a	; 0xa2a <SSD_voidEnable>
 		SSD_voidEnable(L_SSD);
  79e:	60 91 69 00 	lds	r22, 0x0069	; 0x800069 <L_SSD>
  7a2:	70 91 6a 00 	lds	r23, 0x006A	; 0x80006a <L_SSD+0x1>
  7a6:	80 91 6b 00 	lds	r24, 0x006B	; 0x80006b <L_SSD+0x2>
  7aa:	90 91 6c 00 	lds	r25, 0x006C	; 0x80006c <L_SSD+0x3>
- 7ae:	0e 94 e4 04 	call	0x9c8	; 0x9c8 <SSD_voidEnable>
+ 7ae:	0e 94 15 05 	call	0xa2a	; 0xa2a <SSD_voidEnable>
 		SSD_voidSendNumber(R_SSD,0);
  7b2:	60 91 6d 00 	lds	r22, 0x006D	; 0x80006d <R_SSD>
  7b6:	70 91 6e 00 	lds	r23, 0x006E	; 0x80006e <R_SSD+0x1>
  7ba:	80 91 6f 00 	lds	r24, 0x006F	; 0x80006f <R_SSD+0x2>
  7be:	90 91 70 00 	lds	r25, 0x0070	; 0x800070 <R_SSD+0x3>
  7c2:	40 e0       	ldi	r20, 0x00	; 0
- 7c4:	0e 94 cd 04 	call	0x99a	; 0x99a <SSD_voidSendNumber>
+ 7c4:	0e 94 fe 04 	call	0x9fc	; 0x9fc <SSD_voidSendNumber>
 		SSD_voidSendNumber(L_SSD,0);
  7c8:	60 91 69 00 	lds	r22, 0x0069	; 0x800069 <L_SSD>
  7cc:	70 91 6a 00 	lds	r23, 0x006A	; 0x80006a <L_SSD+0x1>
  7d0:	80 91 6b 00 	lds	r24, 0x006B	; 0x80006b <L_SSD+0x2>
  7d4:	90 91 6c 00 	lds	r25, 0x006C	; 0x80006c <L_SSD+0x3>
  7d8:	40 e0       	ldi	r20, 0x00	; 0
- 7da:	0e 94 cd 04 	call	0x99a	; 0x99a <SSD_voidSendNumber>
+ 7da:	0e 94 fe 04 	call	0x9fc	; 0x9fc <SSD_voidSendNumber>
 		// CLCD For Hazard
 		CLCD_voidClearScreen();
  7de:	0e 94 d8 00 	call	0x1b0	; 0x1b0 <CLCD_voidClearScreen>
@@ -1249,9 +1249,9 @@ void MODE_voidTask(void)
  848:	60 91 66 00 	lds	r22, 0x0066	; 0x800066 <R_SW>
  84c:	70 91 67 00 	lds	r23, 0x0067	; 0x800067 <R_SW+0x1>
  850:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <R_SW+0x2>
- 854:	0e 94 36 05 	call	0xa6c	; 0xa6c <SW_u8GetPressed>
+ 854:	0e 94 67 05 	call	0xace	; 0xace <SW_u8GetPressed>
  858:	88 23       	and	r24, r24
- 85a:	29 f1       	breq	.+74     	; 0x8a6 <__stack+0x47>
+ 85a:	c1 f1       	breq	.+112    	; 0x8cc <__stack+0x6d>
  85c:	8f e3       	ldi	r24, 0x3F	; 63
  85e:	9c e9       	ldi	r25, 0x9C	; 156
  860:	01 97       	sbiw	r24, 0x01	; 1
@@ -1260,13 +1260,13 @@ void MODE_voidTask(void)
  866:	00 00       	nop
 	{
 		_delay_ms(20);
-		if (SW_u8GetPressed(R_SW))
+		if (SW_u8GetPressed(R_SW))	/* Recheck to make sure it isn't bouncing */
  868:	60 91 66 00 	lds	r22, 0x0066	; 0x800066 <R_SW>
  86c:	70 91 67 00 	lds	r23, 0x0067	; 0x800067 <R_SW+0x1>
  870:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <R_SW+0x2>
- 874:	0e 94 36 05 	call	0xa6c	; 0xa6c <SW_u8GetPressed>
+ 874:	0e 94 67 05 	call	0xace	; 0xace <SW_u8GetPressed>
  878:	88 23       	and	r24, r24
- 87a:	a9 f0       	breq	.+42     	; 0x8a6 <__stack+0x47>
+ 87a:	f1 f0       	breq	.+60     	; 0x8b8 <__stack+0x59>
 		{
 			switch (Mode_MyState)
  87c:	80 91 a7 00 	lds	r24, 0x00A7	; 0x8000a7 <Mode_MyState>
@@ -1277,444 +1277,506 @@ void MODE_voidTask(void)
  888:	49 f0       	breq	.+18     	; 0x89c <__stack+0x3d>
  88a:	83 30       	cpi	r24, 0x03	; 3
  88c:	51 f0       	breq	.+20     	; 0x8a2 <__stack+0x43>
- 88e:	0b c0       	rjmp	.+22     	; 0x8a6 <__stack+0x47>
+ 88e:	14 c0       	rjmp	.+40     	; 0x8b8 <__stack+0x59>
 			{
 				case IDLE:			MODE_voidRightBlink();
  890:	0e 94 00 04 	call	0x800	; 0x800 <MODE_voidRightBlink>
 									break;
- 894:	08 c0       	rjmp	.+16     	; 0x8a6 <__stack+0x47>
+ 894:	11 c0       	rjmp	.+34     	; 0x8b8 <__stack+0x59>
 				case RIGHT_BLINK:	MODE_voidRightBlink();
  896:	0e 94 00 04 	call	0x800	; 0x800 <MODE_voidRightBlink>
 									break;
- 89a:	05 c0       	rjmp	.+10     	; 0x8a6 <__stack+0x47>
+ 89a:	0e c0       	rjmp	.+28     	; 0x8b8 <__stack+0x59>
 				case LEFT_BLINK:	MODE_voidIdle();
  89c:	0e 94 f6 03 	call	0x7ec	; 0x7ec <MODE_voidIdle>
 									break;
- 8a0:	02 c0       	rjmp	.+4      	; 0x8a6 <__stack+0x47>
+ 8a0:	0b c0       	rjmp	.+22     	; 0x8b8 <__stack+0x59>
 				case HAZZARD_BLINK: MODE_voidHazardBlink();
  8a2:	0e 94 14 04 	call	0x828	; 0x828 <MODE_voidHazardBlink>
+									break;
+ 8a6:	08 c0       	rjmp	.+16     	; 0x8b8 <__stack+0x59>
+				
 			}
+		}
+		while(SW_u8GetPressed(R_SW) ) /*  This condition makes switch stuck when pressed, Avoiding repetitive reading issue */
+		{
+			SW_u8GetPressed(R_SW);
+ 8a8:	60 91 66 00 	lds	r22, 0x0066	; 0x800066 <R_SW>
+ 8ac:	70 91 67 00 	lds	r23, 0x0067	; 0x800067 <R_SW+0x1>
+ 8b0:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <R_SW+0x2>
+ 8b4:	0e 94 67 05 	call	0xace	; 0xace <SW_u8GetPressed>
+				case HAZZARD_BLINK: MODE_voidHazardBlink();
+									break;
+				
+			}
+		}
+		while(SW_u8GetPressed(R_SW) ) /*  This condition makes switch stuck when pressed, Avoiding repetitive reading issue */
+ 8b8:	60 91 66 00 	lds	r22, 0x0066	; 0x800066 <R_SW>
+ 8bc:	70 91 67 00 	lds	r23, 0x0067	; 0x800067 <R_SW+0x1>
+ 8c0:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <R_SW+0x2>
+ 8c4:	0e 94 67 05 	call	0xace	; 0xace <SW_u8GetPressed>
+ 8c8:	81 11       	cpse	r24, r1
+ 8ca:	ee cf       	rjmp	.-36     	; 0x8a8 <__stack+0x49>
+			SW_u8GetPressed(R_SW);
 		}
 	}
 	
 	/* When pressing Left Switch */
 	if ( SW_u8GetPressed(L_SW) )
- 8a6:	60 91 63 00 	lds	r22, 0x0063	; 0x800063 <L_SW>
- 8aa:	70 91 64 00 	lds	r23, 0x0064	; 0x800064 <L_SW+0x1>
- 8ae:	80 91 65 00 	lds	r24, 0x0065	; 0x800065 <L_SW+0x2>
- 8b2:	0e 94 36 05 	call	0xa6c	; 0xa6c <SW_u8GetPressed>
- 8b6:	88 23       	and	r24, r24
- 8b8:	29 f1       	breq	.+74     	; 0x904 <__stack+0xa5>
- 8ba:	8f e3       	ldi	r24, 0x3F	; 63
- 8bc:	9c e9       	ldi	r25, 0x9C	; 156
- 8be:	01 97       	sbiw	r24, 0x01	; 1
- 8c0:	f1 f7       	brne	.-4      	; 0x8be <__stack+0x5f>
- 8c2:	00 c0       	rjmp	.+0      	; 0x8c4 <__stack+0x65>
- 8c4:	00 00       	nop
+ 8cc:	60 91 63 00 	lds	r22, 0x0063	; 0x800063 <L_SW>
+ 8d0:	70 91 64 00 	lds	r23, 0x0064	; 0x800064 <L_SW+0x1>
+ 8d4:	80 91 65 00 	lds	r24, 0x0065	; 0x800065 <L_SW+0x2>
+ 8d8:	0e 94 67 05 	call	0xace	; 0xace <SW_u8GetPressed>
+ 8dc:	88 23       	and	r24, r24
+ 8de:	c1 f1       	breq	.+112    	; 0x950 <__stack+0xf1>
+ 8e0:	8f e3       	ldi	r24, 0x3F	; 63
+ 8e2:	9c e9       	ldi	r25, 0x9C	; 156
+ 8e4:	01 97       	sbiw	r24, 0x01	; 1
+ 8e6:	f1 f7       	brne	.-4      	; 0x8e4 <__stack+0x85>
+ 8e8:	00 c0       	rjmp	.+0      	; 0x8ea <__stack+0x8b>
+ 8ea:	00 00       	nop
 	{
 		_delay_ms(20);
-		if ( SW_u8GetPressed(L_SW) )
- 8c6:	60 91 63 00 	lds	r22, 0x0063	; 0x800063 <L_SW>
- 8ca:	70 91 64 00 	lds	r23, 0x0064	; 0x800064 <L_SW+0x1>
- 8ce:	80 91 65 00 	lds	r24, 0x0065	; 0x800065 <L_SW+0x2>
- 8d2:	0e 94 36 05 	call	0xa6c	; 0xa6c <SW_u8GetPressed>
- 8d6:	88 23       	and	r24, r24
- 8d8:	a9 f0       	breq	.+42     	; 0x904 <__stack+0xa5>
+		if ( SW_u8GetPressed(L_SW) )	/* Recheck to make sure it isn't bouncing */
+ 8ec:	60 91 63 00 	lds	r22, 0x0063	; 0x800063 <L_SW>
+ 8f0:	70 91 64 00 	lds	r23, 0x0064	; 0x800064 <L_SW+0x1>
+ 8f4:	80 91 65 00 	lds	r24, 0x0065	; 0x800065 <L_SW+0x2>
+ 8f8:	0e 94 67 05 	call	0xace	; 0xace <SW_u8GetPressed>
+ 8fc:	88 23       	and	r24, r24
+ 8fe:	41 f1       	breq	.+80     	; 0x950 <__stack+0xf1>
 		{
 			switch (Mode_MyState)
- 8da:	80 91 a7 00 	lds	r24, 0x00A7	; 0x8000a7 <Mode_MyState>
- 8de:	81 30       	cpi	r24, 0x01	; 1
- 8e0:	49 f0       	breq	.+18     	; 0x8f4 <__stack+0x95>
- 8e2:	28 f0       	brcs	.+10     	; 0x8ee <__stack+0x8f>
- 8e4:	82 30       	cpi	r24, 0x02	; 2
- 8e6:	49 f0       	breq	.+18     	; 0x8fa <__stack+0x9b>
- 8e8:	83 30       	cpi	r24, 0x03	; 3
- 8ea:	51 f0       	breq	.+20     	; 0x900 <__stack+0xa1>
- 8ec:	0b c0       	rjmp	.+22     	; 0x904 <__stack+0xa5>
+ 900:	80 91 a7 00 	lds	r24, 0x00A7	; 0x8000a7 <Mode_MyState>
+ 904:	81 30       	cpi	r24, 0x01	; 1
+ 906:	49 f0       	breq	.+18     	; 0x91a <__stack+0xbb>
+ 908:	28 f0       	brcs	.+10     	; 0x914 <__stack+0xb5>
+ 90a:	82 30       	cpi	r24, 0x02	; 2
+ 90c:	49 f0       	breq	.+18     	; 0x920 <__stack+0xc1>
+ 90e:	83 30       	cpi	r24, 0x03	; 3
+ 910:	51 f0       	breq	.+20     	; 0x926 <__stack+0xc7>
+ 912:	14 c0       	rjmp	.+40     	; 0x93c <__stack+0xdd>
 			{
 				case IDLE:			MODE_voidLeftBlink();
- 8ee:	0e 94 0a 04 	call	0x814	; 0x814 <MODE_voidLeftBlink>
+ 914:	0e 94 0a 04 	call	0x814	; 0x814 <MODE_voidLeftBlink>
 									break;
- 8f2:	08 c0       	rjmp	.+16     	; 0x904 <__stack+0xa5>
+ 918:	11 c0       	rjmp	.+34     	; 0x93c <__stack+0xdd>
 				case RIGHT_BLINK:	MODE_voidIdle();
- 8f4:	0e 94 f6 03 	call	0x7ec	; 0x7ec <MODE_voidIdle>
+ 91a:	0e 94 f6 03 	call	0x7ec	; 0x7ec <MODE_voidIdle>
 									break;
- 8f8:	05 c0       	rjmp	.+10     	; 0x904 <__stack+0xa5>
+ 91e:	0e c0       	rjmp	.+28     	; 0x93c <__stack+0xdd>
 				case LEFT_BLINK:	MODE_voidLeftBlink();
- 8fa:	0e 94 0a 04 	call	0x814	; 0x814 <MODE_voidLeftBlink>
+ 920:	0e 94 0a 04 	call	0x814	; 0x814 <MODE_voidLeftBlink>
 									break;
- 8fe:	02 c0       	rjmp	.+4      	; 0x904 <__stack+0xa5>
+ 924:	0b c0       	rjmp	.+22     	; 0x93c <__stack+0xdd>
 				case HAZZARD_BLINK: MODE_voidHazardBlink();
- 900:	0e 94 14 04 	call	0x828	; 0x828 <MODE_voidHazardBlink>
+ 926:	0e 94 14 04 	call	0x828	; 0x828 <MODE_voidHazardBlink>
+									break;
+ 92a:	08 c0       	rjmp	.+16     	; 0x93c <__stack+0xdd>
+				
+			}
+			while(SW_u8GetPressed(L_SW) ) /*  This condition makes switch stuck when pressed, Avoiding repetitive reading issue */
+			{
+				SW_u8GetPressed(L_SW);
+ 92c:	60 91 63 00 	lds	r22, 0x0063	; 0x800063 <L_SW>
+ 930:	70 91 64 00 	lds	r23, 0x0064	; 0x800064 <L_SW+0x1>
+ 934:	80 91 65 00 	lds	r24, 0x0065	; 0x800065 <L_SW+0x2>
+ 938:	0e 94 67 05 	call	0xace	; 0xace <SW_u8GetPressed>
+									break;
+				case HAZZARD_BLINK: MODE_voidHazardBlink();
+									break;
+				
+			}
+			while(SW_u8GetPressed(L_SW) ) /*  This condition makes switch stuck when pressed, Avoiding repetitive reading issue */
+ 93c:	60 91 63 00 	lds	r22, 0x0063	; 0x800063 <L_SW>
+ 940:	70 91 64 00 	lds	r23, 0x0064	; 0x800064 <L_SW+0x1>
+ 944:	80 91 65 00 	lds	r24, 0x0065	; 0x800065 <L_SW+0x2>
+ 948:	0e 94 67 05 	call	0xace	; 0xace <SW_u8GetPressed>
+ 94c:	81 11       	cpse	r24, r1
+ 94e:	ee cf       	rjmp	.-36     	; 0x92c <__stack+0xcd>
 			}
 		}
 	}
 	
-	/* When pressing Right Switch */
+	/* When pressing Right Switch -bouncing 20ms - "hello" and the last delay*/
 	if ( SW_u8GetPressed(H_SW) )
- 904:	60 91 60 00 	lds	r22, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
- 908:	70 91 61 00 	lds	r23, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
- 90c:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <__DATA_REGION_ORIGIN__+0x2>
- 910:	0e 94 36 05 	call	0xa6c	; 0xa6c <SW_u8GetPressed>
- 914:	88 23       	and	r24, r24
- 916:	91 f1       	breq	.+100    	; 0x97c <__stack+0x11d>
- 918:	8f e3       	ldi	r24, 0x3F	; 63
- 91a:	9c e9       	ldi	r25, 0x9C	; 156
- 91c:	01 97       	sbiw	r24, 0x01	; 1
- 91e:	f1 f7       	brne	.-4      	; 0x91c <__stack+0xbd>
- 920:	00 c0       	rjmp	.+0      	; 0x922 <__stack+0xc3>
- 922:	00 00       	nop
+ 950:	60 91 60 00 	lds	r22, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 954:	70 91 61 00 	lds	r23, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 958:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <__DATA_REGION_ORIGIN__+0x2>
+ 95c:	0e 94 67 05 	call	0xace	; 0xace <SW_u8GetPressed>
+ 960:	88 23       	and	r24, r24
+ 962:	09 f4       	brne	.+2      	; 0x966 <__stack+0x107>
+ 964:	45 c0       	rjmp	.+138    	; 0x9f0 <__stack+0x191>
+ 966:	8f e3       	ldi	r24, 0x3F	; 63
+ 968:	9c e9       	ldi	r25, 0x9C	; 156
+ 96a:	01 97       	sbiw	r24, 0x01	; 1
+ 96c:	f1 f7       	brne	.-4      	; 0x96a <__stack+0x10b>
+ 96e:	00 c0       	rjmp	.+0      	; 0x970 <__stack+0x111>
+ 970:	00 00       	nop
 	{
 		_delay_ms(20);
-		if ( SW_u8GetPressed(H_SW) )
- 924:	60 91 60 00 	lds	r22, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
- 928:	70 91 61 00 	lds	r23, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
- 92c:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <__DATA_REGION_ORIGIN__+0x2>
- 930:	0e 94 36 05 	call	0xa6c	; 0xa6c <SW_u8GetPressed>
- 934:	88 23       	and	r24, r24
- 936:	11 f1       	breq	.+68     	; 0x97c <__stack+0x11d>
+		if ( SW_u8GetPressed(H_SW) )	/* Recheck to make sure it isn't bouncing */
+ 972:	60 91 60 00 	lds	r22, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 976:	70 91 61 00 	lds	r23, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 97a:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <__DATA_REGION_ORIGIN__+0x2>
+ 97e:	0e 94 67 05 	call	0xace	; 0xace <SW_u8GetPressed>
+ 982:	88 23       	and	r24, r24
+ 984:	a9 f1       	breq	.+106    	; 0x9f0 <__stack+0x191>
 		{
 			if ( (Mode_MyState == IDLE) || (Mode_MyState == LEFT_BLINK) || (Mode_MyState == RIGHT_BLINK) )
- 938:	80 91 a7 00 	lds	r24, 0x00A7	; 0x8000a7 <Mode_MyState>
- 93c:	88 23       	and	r24, r24
- 93e:	21 f0       	breq	.+8      	; 0x948 <__stack+0xe9>
- 940:	82 30       	cpi	r24, 0x02	; 2
- 942:	11 f0       	breq	.+4      	; 0x948 <__stack+0xe9>
- 944:	81 30       	cpi	r24, 0x01	; 1
- 946:	19 f4       	brne	.+6      	; 0x94e <__stack+0xef>
+ 986:	80 91 a7 00 	lds	r24, 0x00A7	; 0x8000a7 <Mode_MyState>
+ 98a:	88 23       	and	r24, r24
+ 98c:	21 f0       	breq	.+8      	; 0x996 <__stack+0x137>
+ 98e:	82 30       	cpi	r24, 0x02	; 2
+ 990:	11 f0       	breq	.+4      	; 0x996 <__stack+0x137>
+ 992:	81 30       	cpi	r24, 0x01	; 1
+ 994:	19 f4       	brne	.+6      	; 0x99c <__stack+0x13d>
 			{
 				MODE_voidHazardBlink();
- 948:	0e 94 14 04 	call	0x828	; 0x828 <MODE_voidHazardBlink>
- 94c:	17 c0       	rjmp	.+46     	; 0x97c <__stack+0x11d>
+ 996:	0e 94 14 04 	call	0x828	; 0x828 <MODE_voidHazardBlink>
+ 99a:	20 c0       	rjmp	.+64     	; 0x9dc <__stack+0x17d>
 			}
 			else if (Mode_MyState == HAZZARD_BLINK)
- 94e:	83 30       	cpi	r24, 0x03	; 3
- 950:	a9 f4       	brne	.+42     	; 0x97c <__stack+0x11d>
+ 99c:	83 30       	cpi	r24, 0x03	; 3
+ 99e:	f1 f4       	brne	.+60     	; 0x9dc <__stack+0x17d>
 			{
 				switch(u8PreviousState)
- 952:	80 91 a6 00 	lds	r24, 0x00A6	; 0x8000a6 <__data_end>
- 956:	81 30       	cpi	r24, 0x01	; 1
- 958:	49 f0       	breq	.+18     	; 0x96c <__stack+0x10d>
- 95a:	28 f0       	brcs	.+10     	; 0x966 <__stack+0x107>
- 95c:	82 30       	cpi	r24, 0x02	; 2
- 95e:	49 f0       	breq	.+18     	; 0x972 <__stack+0x113>
- 960:	83 30       	cpi	r24, 0x03	; 3
- 962:	51 f0       	breq	.+20     	; 0x978 <__stack+0x119>
- 964:	0b c0       	rjmp	.+22     	; 0x97c <__stack+0x11d>
+ 9a0:	80 91 a6 00 	lds	r24, 0x00A6	; 0x8000a6 <__data_end>
+ 9a4:	81 30       	cpi	r24, 0x01	; 1
+ 9a6:	49 f0       	breq	.+18     	; 0x9ba <__stack+0x15b>
+ 9a8:	28 f0       	brcs	.+10     	; 0x9b4 <__stack+0x155>
+ 9aa:	82 30       	cpi	r24, 0x02	; 2
+ 9ac:	49 f0       	breq	.+18     	; 0x9c0 <__stack+0x161>
+ 9ae:	83 30       	cpi	r24, 0x03	; 3
+ 9b0:	51 f0       	breq	.+20     	; 0x9c6 <__stack+0x167>
+ 9b2:	14 c0       	rjmp	.+40     	; 0x9dc <__stack+0x17d>
 				{
 					case IDLE:			MODE_voidIdle();
- 966:	0e 94 f6 03 	call	0x7ec	; 0x7ec <MODE_voidIdle>
+ 9b4:	0e 94 f6 03 	call	0x7ec	; 0x7ec <MODE_voidIdle>
 										break;
- 96a:	08 c0       	rjmp	.+16     	; 0x97c <__stack+0x11d>
+ 9b8:	11 c0       	rjmp	.+34     	; 0x9dc <__stack+0x17d>
 					case RIGHT_BLINK:	MODE_voidRightBlink();
- 96c:	0e 94 00 04 	call	0x800	; 0x800 <MODE_voidRightBlink>
+ 9ba:	0e 94 00 04 	call	0x800	; 0x800 <MODE_voidRightBlink>
 										break;
- 970:	05 c0       	rjmp	.+10     	; 0x97c <__stack+0x11d>
+ 9be:	0e c0       	rjmp	.+28     	; 0x9dc <__stack+0x17d>
 					case LEFT_BLINK:	MODE_voidLeftBlink();
- 972:	0e 94 0a 04 	call	0x814	; 0x814 <MODE_voidLeftBlink>
+ 9c0:	0e 94 0a 04 	call	0x814	; 0x814 <MODE_voidLeftBlink>
 										break;
- 976:	02 c0       	rjmp	.+4      	; 0x97c <__stack+0x11d>
+ 9c4:	0b c0       	rjmp	.+22     	; 0x9dc <__stack+0x17d>
 					case HAZZARD_BLINK:	MODE_voidIdle();
- 978:	0e 94 f6 03 	call	0x7ec	; 0x7ec <MODE_voidIdle>
- 97c:	9f ef       	ldi	r25, 0xFF	; 255
- 97e:	21 ee       	ldi	r18, 0xE1	; 225
- 980:	84 e0       	ldi	r24, 0x04	; 4
- 982:	91 50       	subi	r25, 0x01	; 1
- 984:	20 40       	sbci	r18, 0x00	; 0
- 986:	80 40       	sbci	r24, 0x00	; 0
- 988:	e1 f7       	brne	.-8      	; 0x982 <__stack+0x123>
- 98a:	00 c0       	rjmp	.+0      	; 0x98c <__stack+0x12d>
- 98c:	00 00       	nop
- 98e:	08 95       	ret
+ 9c6:	0e 94 f6 03 	call	0x7ec	; 0x7ec <MODE_voidIdle>
+										break;
+ 9ca:	08 c0       	rjmp	.+16     	; 0x9dc <__stack+0x17d>
+				}
+			}
+			while(SW_u8GetPressed(H_SW) ) /*  This condition makes switch stuck when pressed, Avoiding repetitive reading issue */
+			{
+				SW_u8GetPressed(H_SW);
+ 9cc:	60 91 60 00 	lds	r22, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 9d0:	70 91 61 00 	lds	r23, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 9d4:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <__DATA_REGION_ORIGIN__+0x2>
+ 9d8:	0e 94 67 05 	call	0xace	; 0xace <SW_u8GetPressed>
+										break;
+					case HAZZARD_BLINK:	MODE_voidIdle();
+										break;
+				}
+			}
+			while(SW_u8GetPressed(H_SW) ) /*  This condition makes switch stuck when pressed, Avoiding repetitive reading issue */
+ 9dc:	60 91 60 00 	lds	r22, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 9e0:	70 91 61 00 	lds	r23, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 9e4:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <__DATA_REGION_ORIGIN__+0x2>
+ 9e8:	0e 94 67 05 	call	0xace	; 0xace <SW_u8GetPressed>
+ 9ec:	81 11       	cpse	r24, r1
+ 9ee:	ee cf       	rjmp	.-36     	; 0x9cc <__stack+0x16d>
+ 9f0:	08 95       	ret
 
-00000990 <SSD_voidInitialDataPort>:
+000009f2 <SSD_voidInitialDataPort>:
  * Parameters :
             =>Copy_u8PORT --> Port Name [ SSD_PORTA ,	SSD_PORTB , SSD_PORTC , SSD_PORTD ]
  * return : void
  */
 void SSD_voidInitialDataPort  (SSD_Type Copy_structConfig )
 {
- 990:	87 2f       	mov	r24, r23
+ 9f2:	87 2f       	mov	r24, r23
 	DIO_enumSetPortDirection    ( Copy_structConfig.DataPort , 0xFF );
- 992:	6f ef       	ldi	r22, 0xFF	; 255
- 994:	0e 94 b6 02 	call	0x56c	; 0x56c <DIO_enumSetPortDirection>
- 998:	08 95       	ret
+ 9f4:	6f ef       	ldi	r22, 0xFF	; 255
+ 9f6:	0e 94 b6 02 	call	0x56c	; 0x56c <DIO_enumSetPortDirection>
+ 9fa:	08 95       	ret
 
-0000099a <SSD_voidSendNumber>:
+000009fc <SSD_voidSendNumber>:
  * Parameters : => struct has the SSD type , data port and enable(port & pin)
  * return : void
  */
 void SSD_voidSendNumber( SSD_Type Copy_structConfig , u8 Copy_u8Number ){
 
 	if( Copy_structConfig.Type == SSD_COMMON_CATHODE ){
- 99a:	61 11       	cpse	r22, r1
- 99c:	09 c0       	rjmp	.+18     	; 0x9b0 <SSD_voidSendNumber+0x16>
+ 9fc:	61 11       	cpse	r22, r1
+ 9fe:	09 c0       	rjmp	.+18     	; 0xa12 <SSD_voidSendNumber+0x16>
 
 		DIO_enumSetPortValue( Copy_structConfig.DataPort , Local_u8SSDNumbers[ Copy_u8Number ] );
- 99e:	e4 2f       	mov	r30, r20
- 9a0:	f0 e0       	ldi	r31, 0x00	; 0
- 9a2:	e4 56       	subi	r30, 0x64	; 100
- 9a4:	ff 4f       	sbci	r31, 0xFF	; 255
- 9a6:	60 81       	ld	r22, Z
- 9a8:	87 2f       	mov	r24, r23
- 9aa:	0e 94 d0 02 	call	0x5a0	; 0x5a0 <DIO_enumSetPortValue>
- 9ae:	08 95       	ret
+ a00:	e4 2f       	mov	r30, r20
+ a02:	f0 e0       	ldi	r31, 0x00	; 0
+ a04:	e4 56       	subi	r30, 0x64	; 100
+ a06:	ff 4f       	sbci	r31, 0xFF	; 255
+ a08:	60 81       	ld	r22, Z
+ a0a:	87 2f       	mov	r24, r23
+ a0c:	0e 94 d0 02 	call	0x5a0	; 0x5a0 <DIO_enumSetPortValue>
+ a10:	08 95       	ret
 
 	}else if( Copy_structConfig.Type == SSD_COMMON_ANODE ){
- 9b0:	61 30       	cpi	r22, 0x01	; 1
- 9b2:	49 f4       	brne	.+18     	; 0x9c6 <SSD_voidSendNumber+0x2c>
+ a12:	61 30       	cpi	r22, 0x01	; 1
+ a14:	49 f4       	brne	.+18     	; 0xa28 <SSD_voidSendNumber+0x2c>
 
 		DIO_enumSetPortValue( Copy_structConfig.DataPort , ~( Local_u8SSDNumbers[ Copy_u8Number ] ) );
- 9b4:	e4 2f       	mov	r30, r20
- 9b6:	f0 e0       	ldi	r31, 0x00	; 0
- 9b8:	e4 56       	subi	r30, 0x64	; 100
- 9ba:	ff 4f       	sbci	r31, 0xFF	; 255
- 9bc:	60 81       	ld	r22, Z
- 9be:	60 95       	com	r22
- 9c0:	87 2f       	mov	r24, r23
- 9c2:	0e 94 d0 02 	call	0x5a0	; 0x5a0 <DIO_enumSetPortValue>
- 9c6:	08 95       	ret
+ a16:	e4 2f       	mov	r30, r20
+ a18:	f0 e0       	ldi	r31, 0x00	; 0
+ a1a:	e4 56       	subi	r30, 0x64	; 100
+ a1c:	ff 4f       	sbci	r31, 0xFF	; 255
+ a1e:	60 81       	ld	r22, Z
+ a20:	60 95       	com	r22
+ a22:	87 2f       	mov	r24, r23
+ a24:	0e 94 d0 02 	call	0x5a0	; 0x5a0 <DIO_enumSetPortValue>
+ a28:	08 95       	ret
 
-000009c8 <SSD_voidEnable>:
+00000a2a <SSD_voidEnable>:
 /*
  * Breif : This Function enable common pin
  * Parameters : => struct has the SSD type , data port and enable(port & pin)
  * return : void
  */
 void SSD_voidEnable    ( SSD_Type Copy_structConfig ){
- 9c8:	cf 93       	push	r28
- 9ca:	df 93       	push	r29
- 9cc:	c8 2f       	mov	r28, r24
- 9ce:	d9 2f       	mov	r29, r25
+ a2a:	cf 93       	push	r28
+ a2c:	df 93       	push	r29
+ a2e:	c8 2f       	mov	r28, r24
+ a30:	d9 2f       	mov	r29, r25
 
 	if( Copy_structConfig.Type == SSD_COMMON_CATHODE ){
- 9d0:	61 11       	cpse	r22, r1
- 9d2:	0a c0       	rjmp	.+20     	; 0x9e8 <SSD_voidEnable+0x20>
+ a32:	61 11       	cpse	r22, r1
+ a34:	0a c0       	rjmp	.+20     	; 0xa4a <SSD_voidEnable+0x20>
 
 		DIO_enumSetPinDirection( Copy_structConfig.EnablePort , Copy_structConfig.EnablePin , DIO_PIN_HIGH );
- 9d4:	41 e0       	ldi	r20, 0x01	; 1
- 9d6:	69 2f       	mov	r22, r25
- 9d8:	0e 94 35 01 	call	0x26a	; 0x26a <DIO_enumSetPinDirection>
+ a36:	41 e0       	ldi	r20, 0x01	; 1
+ a38:	69 2f       	mov	r22, r25
+ a3a:	0e 94 35 01 	call	0x26a	; 0x26a <DIO_enumSetPinDirection>
 		DIO_enumSetPinValue( Copy_structConfig.EnablePort , Copy_structConfig.EnablePin , DIO_PIN_LOW );
- 9dc:	40 e0       	ldi	r20, 0x00	; 0
- 9de:	6d 2f       	mov	r22, r29
- 9e0:	8c 2f       	mov	r24, r28
- 9e2:	0e 94 bd 01 	call	0x37a	; 0x37a <DIO_enumSetPinValue>
- 9e6:	0b c0       	rjmp	.+22     	; 0x9fe <SSD_voidEnable+0x36>
+ a3e:	40 e0       	ldi	r20, 0x00	; 0
+ a40:	6d 2f       	mov	r22, r29
+ a42:	8c 2f       	mov	r24, r28
+ a44:	0e 94 bd 01 	call	0x37a	; 0x37a <DIO_enumSetPinValue>
+ a48:	0b c0       	rjmp	.+22     	; 0xa60 <SSD_voidEnable+0x36>
 
 	}else if( Copy_structConfig.Type == SSD_COMMON_ANODE ){
- 9e8:	61 30       	cpi	r22, 0x01	; 1
- 9ea:	49 f4       	brne	.+18     	; 0x9fe <SSD_voidEnable+0x36>
+ a4a:	61 30       	cpi	r22, 0x01	; 1
+ a4c:	49 f4       	brne	.+18     	; 0xa60 <SSD_voidEnable+0x36>
 
 		DIO_enumSetPinDirection( Copy_structConfig.EnablePort , Copy_structConfig.EnablePin , DIO_PIN_HIGH );
- 9ec:	41 e0       	ldi	r20, 0x01	; 1
- 9ee:	69 2f       	mov	r22, r25
- 9f0:	0e 94 35 01 	call	0x26a	; 0x26a <DIO_enumSetPinDirection>
+ a4e:	41 e0       	ldi	r20, 0x01	; 1
+ a50:	69 2f       	mov	r22, r25
+ a52:	0e 94 35 01 	call	0x26a	; 0x26a <DIO_enumSetPinDirection>
 		DIO_enumSetPinValue( Copy_structConfig.EnablePort , Copy_structConfig.EnablePin , DIO_PIN_HIGH );
- 9f4:	41 e0       	ldi	r20, 0x01	; 1
- 9f6:	6d 2f       	mov	r22, r29
- 9f8:	8c 2f       	mov	r24, r28
- 9fa:	0e 94 bd 01 	call	0x37a	; 0x37a <DIO_enumSetPinValue>
+ a56:	41 e0       	ldi	r20, 0x01	; 1
+ a58:	6d 2f       	mov	r22, r29
+ a5a:	8c 2f       	mov	r24, r28
+ a5c:	0e 94 bd 01 	call	0x37a	; 0x37a <DIO_enumSetPinValue>
 
 	}
 
 }
- 9fe:	df 91       	pop	r29
- a00:	cf 91       	pop	r28
- a02:	08 95       	ret
+ a60:	df 91       	pop	r29
+ a62:	cf 91       	pop	r28
+ a64:	08 95       	ret
 
-00000a04 <SSD_voidDisable>:
+00000a66 <SSD_voidDisable>:
 /*
  * Breif : This Function disable common pin
  * Parameters : => struct has the SSD type , data port and enable(port & pin)
  * return : void
  */
 void SSD_voidDisable   ( SSD_Type Copy_structConfig ){
- a04:	cf 93       	push	r28
- a06:	df 93       	push	r29
- a08:	c8 2f       	mov	r28, r24
- a0a:	d9 2f       	mov	r29, r25
+ a66:	cf 93       	push	r28
+ a68:	df 93       	push	r29
+ a6a:	c8 2f       	mov	r28, r24
+ a6c:	d9 2f       	mov	r29, r25
 
 	if( Copy_structConfig.Type == SSD_COMMON_CATHODE ){
- a0c:	61 11       	cpse	r22, r1
- a0e:	0a c0       	rjmp	.+20     	; 0xa24 <SSD_voidDisable+0x20>
+ a6e:	61 11       	cpse	r22, r1
+ a70:	0a c0       	rjmp	.+20     	; 0xa86 <SSD_voidDisable+0x20>
 
 		DIO_enumSetPinDirection( Copy_structConfig.EnablePort , Copy_structConfig.EnablePin , DIO_PIN_HIGH );
- a10:	41 e0       	ldi	r20, 0x01	; 1
- a12:	69 2f       	mov	r22, r25
- a14:	0e 94 35 01 	call	0x26a	; 0x26a <DIO_enumSetPinDirection>
+ a72:	41 e0       	ldi	r20, 0x01	; 1
+ a74:	69 2f       	mov	r22, r25
+ a76:	0e 94 35 01 	call	0x26a	; 0x26a <DIO_enumSetPinDirection>
 		DIO_enumSetPinValue( Copy_structConfig.EnablePort , Copy_structConfig.EnablePin , DIO_PIN_HIGH );
- a18:	41 e0       	ldi	r20, 0x01	; 1
- a1a:	6d 2f       	mov	r22, r29
- a1c:	8c 2f       	mov	r24, r28
- a1e:	0e 94 bd 01 	call	0x37a	; 0x37a <DIO_enumSetPinValue>
- a22:	0b c0       	rjmp	.+22     	; 0xa3a <SSD_voidDisable+0x36>
+ a7a:	41 e0       	ldi	r20, 0x01	; 1
+ a7c:	6d 2f       	mov	r22, r29
+ a7e:	8c 2f       	mov	r24, r28
+ a80:	0e 94 bd 01 	call	0x37a	; 0x37a <DIO_enumSetPinValue>
+ a84:	0b c0       	rjmp	.+22     	; 0xa9c <SSD_voidDisable+0x36>
 
 	}
 	else if( Copy_structConfig.Type == SSD_COMMON_ANODE ){
- a24:	61 30       	cpi	r22, 0x01	; 1
- a26:	49 f4       	brne	.+18     	; 0xa3a <SSD_voidDisable+0x36>
+ a86:	61 30       	cpi	r22, 0x01	; 1
+ a88:	49 f4       	brne	.+18     	; 0xa9c <SSD_voidDisable+0x36>
 
 		DIO_enumSetPinDirection( Copy_structConfig.EnablePort , Copy_structConfig.EnablePin , DIO_PIN_HIGH );
- a28:	41 e0       	ldi	r20, 0x01	; 1
- a2a:	69 2f       	mov	r22, r25
- a2c:	0e 94 35 01 	call	0x26a	; 0x26a <DIO_enumSetPinDirection>
+ a8a:	41 e0       	ldi	r20, 0x01	; 1
+ a8c:	69 2f       	mov	r22, r25
+ a8e:	0e 94 35 01 	call	0x26a	; 0x26a <DIO_enumSetPinDirection>
 		DIO_enumSetPinValue( Copy_structConfig.EnablePort , Copy_structConfig.EnablePin , DIO_PIN_LOW );
- a30:	40 e0       	ldi	r20, 0x00	; 0
- a32:	6d 2f       	mov	r22, r29
- a34:	8c 2f       	mov	r24, r28
- a36:	0e 94 bd 01 	call	0x37a	; 0x37a <DIO_enumSetPinValue>
+ a92:	40 e0       	ldi	r20, 0x00	; 0
+ a94:	6d 2f       	mov	r22, r29
+ a96:	8c 2f       	mov	r24, r28
+ a98:	0e 94 bd 01 	call	0x37a	; 0x37a <DIO_enumSetPinValue>
 
 	}
 
 }
- a3a:	df 91       	pop	r29
- a3c:	cf 91       	pop	r28
- a3e:	08 95       	ret
+ a9c:	df 91       	pop	r29
+ a9e:	cf 91       	pop	r28
+ aa0:	08 95       	ret
 
-00000a40 <SW_voidInit>:
+00000aa2 <SW_voidInit>:
 /*
-* Breif : This Function initialize the pin which connected to Push Button as Pull Up Input pin
+* Brief : This Function initialize the pin which connected to Push Button as Pull Up Input pin
 * Parameters :   => struct has the switch porn , pin , status
 * return : void 
 */
 void SW_voidInit      ( SW_Type SW_Config ){
- a40:	1f 93       	push	r17
- a42:	cf 93       	push	r28
- a44:	df 93       	push	r29
- a46:	c6 2f       	mov	r28, r22
- a48:	d7 2f       	mov	r29, r23
- a4a:	18 2f       	mov	r17, r24
+ aa2:	1f 93       	push	r17
+ aa4:	cf 93       	push	r28
+ aa6:	df 93       	push	r29
+ aa8:	c6 2f       	mov	r28, r22
+ aaa:	d7 2f       	mov	r29, r23
+ aac:	18 2f       	mov	r17, r24
 	
 	DIO_enumSetPinDirection( SW_Config.Port , SW_Config.Pin , DIO_PIN_INPUT );
- a4c:	40 e0       	ldi	r20, 0x00	; 0
- a4e:	67 2f       	mov	r22, r23
- a50:	8c 2f       	mov	r24, r28
- a52:	0e 94 35 01 	call	0x26a	; 0x26a <DIO_enumSetPinDirection>
+ aae:	40 e0       	ldi	r20, 0x00	; 0
+ ab0:	67 2f       	mov	r22, r23
+ ab2:	8c 2f       	mov	r24, r28
+ ab4:	0e 94 35 01 	call	0x26a	; 0x26a <DIO_enumSetPinDirection>
 	
 	/* If Sw is Internal Pull Up */
 	if( SW_Config.Pull_State == SW_Int_PULL_UP ){
- a56:	11 11       	cpse	r17, r1
- a58:	05 c0       	rjmp	.+10     	; 0xa64 <SW_voidInit+0x24>
+ ab8:	11 11       	cpse	r17, r1
+ aba:	05 c0       	rjmp	.+10     	; 0xac6 <SW_voidInit+0x24>
 		
 		DIO_enumSetPinValue    ( SW_Config.Port , SW_Config.Pin , DIO_PIN_HIGH  );
- a5a:	41 e0       	ldi	r20, 0x01	; 1
- a5c:	6d 2f       	mov	r22, r29
- a5e:	8c 2f       	mov	r24, r28
- a60:	0e 94 bd 01 	call	0x37a	; 0x37a <DIO_enumSetPinValue>
+ abc:	41 e0       	ldi	r20, 0x01	; 1
+ abe:	6d 2f       	mov	r22, r29
+ ac0:	8c 2f       	mov	r24, r28
+ ac2:	0e 94 bd 01 	call	0x37a	; 0x37a <DIO_enumSetPinValue>
 		
 		/* we could use DIO_enumConnectPullup */
 	}
 	
 }
- a64:	df 91       	pop	r29
- a66:	cf 91       	pop	r28
- a68:	1f 91       	pop	r17
- a6a:	08 95       	ret
+ ac6:	df 91       	pop	r29
+ ac8:	cf 91       	pop	r28
+ aca:	1f 91       	pop	r17
+ acc:	08 95       	ret
 
-00000a6c <SW_u8GetPressed>:
-* Breif : This Function read Button status
+00000ace <SW_u8GetPressed>:
+* Brief : This Function read Button status
 * Parameters :   => struct has the switch porn , pin , status
 * return : switch status
 */
 
 u8   SW_u8GetPressed ( SW_Type SW_Config ){
- a6c:	cf 93       	push	r28
- a6e:	df 93       	push	r29
- a70:	1f 92       	push	r1
- a72:	cd b7       	in	r28, 0x3d	; 61
- a74:	de b7       	in	r29, 0x3e	; 62
- a76:	96 2f       	mov	r25, r22
+ ace:	cf 93       	push	r28
+ ad0:	df 93       	push	r29
+ ad2:	1f 92       	push	r1
+ ad4:	cd b7       	in	r28, 0x3d	; 61
+ ad6:	de b7       	in	r29, 0x3e	; 62
+ ad8:	96 2f       	mov	r25, r22
 	
 	u8 LOC_u8Result = SW_NOT_PRESSED ;
 	u8 LOC_u8PinVal = SW_NOT_PRESSED ;
- a78:	19 82       	std	Y+1, r1	; 0x01
+ ada:	19 82       	std	Y+1, r1	; 0x01
 	
 	if ( (SW_Config.Pull_State == SW_Int_PULL_UP) || (SW_Config.Pull_State == SW_Ext_PULL_UP) )
- a7a:	82 30       	cpi	r24, 0x02	; 2
- a7c:	60 f4       	brcc	.+24     	; 0xa96 <SW_u8GetPressed+0x2a>
+ adc:	82 30       	cpi	r24, 0x02	; 2
+ ade:	60 f4       	brcc	.+24     	; 0xaf8 <SW_u8GetPressed+0x2a>
 	{
 		DIO_enumGetPinValue( SW_Config.Port , SW_Config.Pin , &LOC_u8PinVal );
- a7e:	ae 01       	movw	r20, r28
- a80:	4f 5f       	subi	r20, 0xFF	; 255
- a82:	5f 4f       	sbci	r21, 0xFF	; 255
- a84:	67 2f       	mov	r22, r23
- a86:	89 2f       	mov	r24, r25
- a88:	0e 94 45 02 	call	0x48a	; 0x48a <DIO_enumGetPinValue>
+ ae0:	ae 01       	movw	r20, r28
+ ae2:	4f 5f       	subi	r20, 0xFF	; 255
+ ae4:	5f 4f       	sbci	r21, 0xFF	; 255
+ ae6:	67 2f       	mov	r22, r23
+ ae8:	89 2f       	mov	r24, r25
+ aea:	0e 94 45 02 	call	0x48a	; 0x48a <DIO_enumGetPinValue>
 		
 		if (LOC_u8PinVal==0)
- a8c:	89 81       	ldd	r24, Y+1	; 0x01
- a8e:	81 11       	cpse	r24, r1
- a90:	12 c0       	rjmp	.+36     	; 0xab6 <SW_u8GetPressed+0x4a>
+ aee:	89 81       	ldd	r24, Y+1	; 0x01
+ af0:	81 11       	cpse	r24, r1
+ af2:	12 c0       	rjmp	.+36     	; 0xb18 <SW_u8GetPressed+0x4a>
 		{
 			LOC_u8Result = SW_PRESSED ;
- a92:	81 e0       	ldi	r24, 0x01	; 1
- a94:	17 c0       	rjmp	.+46     	; 0xac4 <SW_u8GetPressed+0x58>
+ af4:	81 e0       	ldi	r24, 0x01	; 1
+ af6:	17 c0       	rjmp	.+46     	; 0xb26 <SW_u8GetPressed+0x58>
 		{
 			LOC_u8Result = SW_NOT_PRESSED ;
 		}
 
 	}
 	else if (SW_Config.Pull_State == SW_Ext_PULL_DOWN)
- a96:	82 30       	cpi	r24, 0x02	; 2
- a98:	81 f4       	brne	.+32     	; 0xaba <SW_u8GetPressed+0x4e>
+ af8:	82 30       	cpi	r24, 0x02	; 2
+ afa:	81 f4       	brne	.+32     	; 0xb1c <SW_u8GetPressed+0x4e>
 	{
 		DIO_enumGetPinValue( SW_Config.Port , SW_Config.Pin , &LOC_u8PinVal );
- a9a:	ae 01       	movw	r20, r28
- a9c:	4f 5f       	subi	r20, 0xFF	; 255
- a9e:	5f 4f       	sbci	r21, 0xFF	; 255
- aa0:	67 2f       	mov	r22, r23
- aa2:	89 2f       	mov	r24, r25
- aa4:	0e 94 45 02 	call	0x48a	; 0x48a <DIO_enumGetPinValue>
+ afc:	ae 01       	movw	r20, r28
+ afe:	4f 5f       	subi	r20, 0xFF	; 255
+ b00:	5f 4f       	sbci	r21, 0xFF	; 255
+ b02:	67 2f       	mov	r22, r23
+ b04:	89 2f       	mov	r24, r25
+ b06:	0e 94 45 02 	call	0x48a	; 0x48a <DIO_enumGetPinValue>
 		
 		if (LOC_u8PinVal==0)
- aa8:	89 81       	ldd	r24, Y+1	; 0x01
- aaa:	88 23       	and	r24, r24
- aac:	41 f0       	breq	.+16     	; 0xabe <SW_u8GetPressed+0x52>
+ b0a:	89 81       	ldd	r24, Y+1	; 0x01
+ b0c:	88 23       	and	r24, r24
+ b0e:	41 f0       	breq	.+16     	; 0xb20 <SW_u8GetPressed+0x52>
 		{
 			LOC_u8Result = SW_NOT_PRESSED ;
 		}
 		else if (LOC_u8PinVal==1)
- aae:	81 30       	cpi	r24, 0x01	; 1
- ab0:	41 f0       	breq	.+16     	; 0xac2 <SW_u8GetPressed+0x56>
+ b10:	81 30       	cpi	r24, 0x01	; 1
+ b12:	41 f0       	breq	.+16     	; 0xb24 <SW_u8GetPressed+0x56>
 * return : switch status
 */
 
 u8   SW_u8GetPressed ( SW_Type SW_Config ){
 	
 	u8 LOC_u8Result = SW_NOT_PRESSED ;
- ab2:	80 e0       	ldi	r24, 0x00	; 0
- ab4:	07 c0       	rjmp	.+14     	; 0xac4 <SW_u8GetPressed+0x58>
- ab6:	80 e0       	ldi	r24, 0x00	; 0
- ab8:	05 c0       	rjmp	.+10     	; 0xac4 <SW_u8GetPressed+0x58>
- aba:	80 e0       	ldi	r24, 0x00	; 0
- abc:	03 c0       	rjmp	.+6      	; 0xac4 <SW_u8GetPressed+0x58>
+ b14:	80 e0       	ldi	r24, 0x00	; 0
+ b16:	07 c0       	rjmp	.+14     	; 0xb26 <SW_u8GetPressed+0x58>
+ b18:	80 e0       	ldi	r24, 0x00	; 0
+ b1a:	05 c0       	rjmp	.+10     	; 0xb26 <SW_u8GetPressed+0x58>
+ b1c:	80 e0       	ldi	r24, 0x00	; 0
+ b1e:	03 c0       	rjmp	.+6      	; 0xb26 <SW_u8GetPressed+0x58>
 	{
 		DIO_enumGetPinValue( SW_Config.Port , SW_Config.Pin , &LOC_u8PinVal );
 		
 		if (LOC_u8PinVal==0)
 		{
 			LOC_u8Result = SW_NOT_PRESSED ;
- abe:	80 e0       	ldi	r24, 0x00	; 0
- ac0:	01 c0       	rjmp	.+2      	; 0xac4 <SW_u8GetPressed+0x58>
+ b20:	80 e0       	ldi	r24, 0x00	; 0
+ b22:	01 c0       	rjmp	.+2      	; 0xb26 <SW_u8GetPressed+0x58>
 		}
 		else if (LOC_u8PinVal==1)
 		{
 			LOC_u8Result = SW_PRESSED ;
- ac2:	81 e0       	ldi	r24, 0x01	; 1
+ b24:	81 e0       	ldi	r24, 0x01	; 1
 		}
 	}
 		
 	return LOC_u8Result ;
 	
 }
- ac4:	0f 90       	pop	r0
- ac6:	df 91       	pop	r29
- ac8:	cf 91       	pop	r28
- aca:	08 95       	ret
+ b26:	0f 90       	pop	r0
+ b28:	df 91       	pop	r29
+ b2a:	cf 91       	pop	r28
+ b2c:	08 95       	ret
 
-00000acc <_exit>:
- acc:	f8 94       	cli
+00000b2e <_exit>:
+ b2e:	f8 94       	cli
 
-00000ace <__stop_program>:
- ace:	ff cf       	rjmp	.-2      	; 0xace <__stop_program>
+00000b30 <__stop_program>:
+ b30:	ff cf       	rjmp	.-2      	; 0xb30 <__stop_program>

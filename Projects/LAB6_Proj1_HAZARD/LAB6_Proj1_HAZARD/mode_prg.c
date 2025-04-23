@@ -169,7 +169,7 @@ void MODE_voidTask(void)
 	if ( SW_u8GetPressed(R_SW) )
 	{
 		_delay_ms(20);
-		if (SW_u8GetPressed(R_SW))
+		if (SW_u8GetPressed(R_SW))	/* Recheck to make sure it isn't bouncing */
 		{
 			switch (Mode_MyState)
 			{
@@ -184,13 +184,17 @@ void MODE_voidTask(void)
 				
 			}
 		}
+		while(SW_u8GetPressed(R_SW) ) /*  This condition makes switch stuck when pressed, Avoiding repetitive reading issue */
+		{
+			SW_u8GetPressed(R_SW);
+		}
 	}
 	
 	/* When pressing Left Switch */
 	if ( SW_u8GetPressed(L_SW) )
 	{
 		_delay_ms(20);
-		if ( SW_u8GetPressed(L_SW) )
+		if ( SW_u8GetPressed(L_SW) )	/* Recheck to make sure it isn't bouncing */
 		{
 			switch (Mode_MyState)
 			{
@@ -204,6 +208,10 @@ void MODE_voidTask(void)
 									break;
 				
 			}
+			while(SW_u8GetPressed(L_SW) ) /*  This condition makes switch stuck when pressed, Avoiding repetitive reading issue */
+			{
+				SW_u8GetPressed(L_SW);
+			}
 		}
 	}
 	
@@ -211,7 +219,7 @@ void MODE_voidTask(void)
 	if ( SW_u8GetPressed(H_SW) )
 	{
 		_delay_ms(20);
-		if ( SW_u8GetPressed(H_SW) )
+		if ( SW_u8GetPressed(H_SW) )	/* Recheck to make sure it isn't bouncing */
 		{
 			if ( (Mode_MyState == IDLE) || (Mode_MyState == LEFT_BLINK) || (Mode_MyState == RIGHT_BLINK) )
 			{
@@ -231,10 +239,12 @@ void MODE_voidTask(void)
 										break;
 				}
 			}
+			while(SW_u8GetPressed(H_SW) ) /*  This condition makes switch stuck when pressed, Avoiding repetitive reading issue */
+			{
+				SW_u8GetPressed(H_SW);
+			}
 		}
 	}
-	
-	_delay_ms(200);
 }
 
 /**********************************************************************************************/

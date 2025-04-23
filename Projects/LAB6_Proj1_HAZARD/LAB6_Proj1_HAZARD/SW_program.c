@@ -9,10 +9,7 @@
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
 
-#include <util\delay.h>
-
 #include "DIO_interface.h"
-
 
 #include "SW_interface.h"
 #include "SW_private.h"
@@ -21,7 +18,7 @@
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 /*
-* Breif : This Function initialize the pin which connected to Push Button as Pull Up Input pin
+* Brief : This Function initialize the pin which connected to Push Button as Pull Up Input pin
 * Parameters :   => struct has the switch porn , pin , status
 * return : void 
 */
@@ -41,7 +38,7 @@ void SW_voidInit      ( SW_Type SW_Config ){
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 /*
-* Breif : This Function read Button status
+* Brief : This Function read Button status
 * Parameters :   => struct has the switch porn , pin , status
 * return : switch status
 */

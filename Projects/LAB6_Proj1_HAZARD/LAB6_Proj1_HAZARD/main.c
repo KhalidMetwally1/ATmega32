@@ -25,11 +25,9 @@
 /******************************************************************************/
 /*                                                                            */
 /* !Designed by     : Mahmoud Karem                      !Date : NOV 21, 2023 */
-/* !Coded by        : Mahmoud Karem                      !Date : NOV 21, 2023 */
-/* !Student			: Khalid Metwally					 !Date : OCT 21, 2024 */
+/* !Coded by        : Khalid Metwally                    !Date : NOV 21, 2023 */
 /*                                                                            */
 /******************************************************************************/
-
 /*! Include compiler types header                                             */
 
 #include "STD_TYPES.h"
